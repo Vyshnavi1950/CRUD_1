@@ -11,14 +11,14 @@ function App() {
   }, []);
 
   const fetchItems = () => {
-    fetch('http://localhost:5000/items/')
+    fetch('https://crud-2-gwzu.onrender.com/items/')
       .then(res => res.json())
       .then(data => setItems(data))
       .catch(err => console.error('Error fetching items:', err));
   };
 
   const addItem = () => {
-    fetch('http://localhost:5000/items/', {
+    fetch('https://crud-2-gwzu.onrender.com/items/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: newItem })
@@ -31,7 +31,7 @@ function App() {
   };
 
   const deleteItem = (id) => {
-    fetch(`http://localhost:5000/items/${id}`, {
+    fetch(`https://crud-2-gwzu.onrender.com/items/${id}`, {
       method: 'DELETE'
     })
       .then(() => fetchItems())
@@ -44,7 +44,7 @@ function App() {
   };
 
   const updateItem = () => {
-    fetch(`http://localhost:5000/items/${editId}`, {
+    fetch(`https://crud-2-gwzu.onrender.com/items/${editId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: editName })
